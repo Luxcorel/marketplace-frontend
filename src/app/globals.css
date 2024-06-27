@@ -22,14 +22,30 @@ body {
 }
 
 @keyframes rainbow {
-  0% { color: #FF0000; }
-  14.28% { color: #FF7F00; }
-  28.56% { color: #FFFF00; }
-  42.84% { color: #00FF00; }
-  57.12% { color: #0000FF; }
-  71.40% { color: #4B0082; }
-  85.68% { color: #8B00FF; }
-  100% { color: #FF0000; }
+  0% {
+    color: #ff0000;
+  }
+  14.28% {
+    color: #ff7f00;
+  }
+  28.56% {
+    color: #ffff00;
+  }
+  42.84% {
+    color: #00ff00;
+  }
+  57.12% {
+    color: #0000ff;
+  }
+  71.40% {
+    color: #4b0082;
+  }
+  85.68% {
+    color: #8b00ff;
+  }
+  100% {
+    color: #ff0000;
+  }
 }
 
 .rainbow-text {
