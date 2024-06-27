@@ -10,6 +10,8 @@ export const metadata: Metadata = {
   description: "Marketplace - post ad",
 };
 
+export const dynamic = 'force-dynamic';
+
 async function getCategories(): Promise<ProductCategoryDTO[] | undefined> {
   const categories: ProductCategoryDTO[] = await getAllProductCategories()
     .then((res) => res.json())
