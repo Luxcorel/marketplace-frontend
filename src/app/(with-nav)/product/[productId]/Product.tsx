@@ -41,14 +41,6 @@ export default async function Product(props: Props) {
     notFound();
   }
 
-  const renderFiles = () => {
-    if (!product || !product.imageUrls || product.imageUrls.length === 0) {
-      return null;
-    }
-
-    return <ProductImages product={product} />;
-  };
-
   return product ? (
     <div className="w-full">
       <div className="mb-2 flex space-x-2">
@@ -61,7 +53,13 @@ export default async function Product(props: Props) {
         </p>
       </div>
 
-      <div className="flex justify-center bg-gray-200">{renderFiles()}</div>
+      {!product ||
+      !product.imageUrls ||
+      product.imageUrls.length === 0 ? null : (
+        <div className="flex justify-center bg-gray-200">
+          <ProductImages product={product} />
+        </div>
+      )}
 
       <h1 className="mt-3 font-sans text-xl font-medium 2md:text-3xl 2md:font-light">
         {product.name}
