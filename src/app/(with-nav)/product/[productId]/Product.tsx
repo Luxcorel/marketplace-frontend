@@ -7,6 +7,7 @@ import { ProductGetResponseDTO } from "@/types/endpoint-types-incoming";
 import { getProductById } from "@/utils/api-calls";
 import { PostedDate } from "@/app/(with-nav)/product/[productId]/PostedDate";
 import { notFound } from "next/navigation";
+import ProductImages from "../components/ProductImages";
 
 type Props = {
   readonly productId: string;
@@ -45,18 +46,7 @@ export default async function Product(props: Props) {
       return null;
     }
 
-    return product.imageUrls.map((url) => (
-      <div key={product.name} className="mx-auto h-[60vh] w-full shrink-0 pr-2">
-        <Image
-          priority
-          src={url}
-          alt={product.name}
-          className="size-full rounded object-contain"
-          width={1000}
-          height={1000}
-        />
-      </div>
-    ));
+    return <ProductImages product={product} />;
   };
 
   return product ? (
@@ -71,11 +61,11 @@ export default async function Product(props: Props) {
         </p>
       </div>
 
-      <div className="flex w-full overflow-x-auto bg-gray-200">
-        {renderFiles()}
-      </div>
+      <div className="flex justify-center bg-gray-200">{renderFiles()}</div>
 
-      <h1 className="mt-3 text-3xl">{product.name}</h1>
+      <h1 className="mt-3 font-sans text-xl font-medium 2md:text-3xl 2md:font-light">
+        {product.name}
+      </h1>
 
       <div className="w-full">
         <p className="mt-3 text-3xl font-bold">
