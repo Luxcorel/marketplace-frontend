@@ -6,6 +6,7 @@ import ProductSeller from "@/app/(with-nav)/product/[productId]/ProductSeller";
 import { ProductGetResponseDTO } from "@/types/endpoint-types-incoming";
 import { getProductById } from "@/utils/api-calls";
 import { PostedDate } from "@/app/(with-nav)/product/[productId]/PostedDate";
+import { notFound } from "next/navigation";
 
 type Props = {
   readonly productId: string;
@@ -35,6 +36,9 @@ export default async function Product(props: Props) {
   });
 
   const product = await getProduct(props.productId);
+  if (!product) {
+    notFound();
+  }
 
   const renderFiles = () => {
     if (!product || !product.imageUrls || product.imageUrls.length === 0) {
