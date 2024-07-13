@@ -46,21 +46,21 @@ export default function ProductImages(props: Props) {
               priority
               src={url}
               alt={product.name}
-              className="size-full rounded object-contain"
+              className="size-full object-contain"
               width={1000}
               height={1000}
             />
           </CarouselItem>
         ))}
       </CarouselContent>
-      <div className="absolute inset-y-1/2 w-full">
-        {numberOfImages > 1 ? (
+      {numberOfImages > 1 ? (
+        <div className="absolute inset-y-1/2 w-full">
           <div className="mx-2 flex justify-between">
             <CarouselPrevious />
             <CarouselNext />
           </div>
-        ) : null}
-      </div>
+        </div>
+      ) : null}
       <div className="pointer-events-none absolute bottom-4 z-10 flex w-full justify-center ">
         <span className="rounded bg-black/60 px-2 py-1 text-sm font-medium text-gray-100">
           {current} / {numberOfImages}
