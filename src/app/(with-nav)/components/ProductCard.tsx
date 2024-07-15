@@ -1,3 +1,5 @@
+"use client";
+
 import {
   ProductCategoryDTO,
   ProductGetResponseDTO,
@@ -36,21 +38,21 @@ export default function ProductCard(props: {
   });
 
   function renderDate() {
-    if (createdAt.getDate() === today.getDate()) {
+    if (createdAt.toUTCString() === today.toUTCString()) {
       return `Today ${createdAt.toLocaleString(["en-SE", "en-US"], {
         hour: "numeric",
         minute: "numeric",
       })}`;
     }
 
-    if (createdAt.getDate() === yesterday.getDate()) {
+    if (createdAt.toUTCString() === yesterday.toUTCString()) {
       return `Yesterday ${createdAt.toLocaleString(["en-SE", "en-US"], {
         hour: "numeric",
         minute: "numeric",
       })}`;
     }
 
-    if (createdAt.getDate() === twoDaysAgo.getDate()) {
+    if (createdAt.toUTCString() === twoDaysAgo.toUTCString()) {
       return createdAt.toLocaleString(["en-SE", "en-US"], {
         weekday: "long",
         hour: "numeric",
