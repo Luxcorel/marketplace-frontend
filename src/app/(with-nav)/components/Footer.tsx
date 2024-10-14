@@ -67,12 +67,12 @@ export default function Footer() {
               <Link href="/">Press</Link>
             </p>
             <p>
-              <Link href="/">Work at Plocket</Link>
+              <Link href="/">Work at Marketplace</Link>
             </p>
           </div>
         </div>
         <div className="mt-10 bg-gray-200 py-5">
-          <p className="mx-auto w-8/12 text-sm">&copy; Plocket Inc.</p>
+          <p className="mx-auto w-8/12 text-sm">&copy; Marketplace Inc.</p>
         </div>
       </footer>
     </div>
