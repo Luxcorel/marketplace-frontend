@@ -16,7 +16,7 @@ export default function Navbar() {
           Marketplace
         </Link>
         <Link href="/" className="hidden mobile-br:block">
-          P
+          M
         </Link>
       </div>
       <Link href="/product">
@@ -155,7 +155,7 @@ export default function Navbar() {
   ) : (
     <>
       <Link className="text-3xl font-black text-red-600" href="/">
-        Plocket
+        Marketplace
       </Link>
       <div className="flex items-center justify-end">
         <Link href="/login">
