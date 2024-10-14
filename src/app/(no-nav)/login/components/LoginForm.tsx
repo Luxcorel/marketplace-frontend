@@ -34,7 +34,7 @@ export default function LoginForm() {
       className="relative flex flex-col items-center rounded-xl bg-white shadow-2xl shadow-gray-700"
     >
       <div className="m-7 flex w-5/6 items-center justify-between">
-        <h2 className="font-black text-red-600">Plocket</h2>
+        <h2 className="font-black text-red-600">Marketplace</h2>
         <h2 className="text-2xl font-semibold text-slate-700">University</h2>
       </div>
       <h1 className={`${userFound ? "" : "text-red-500"} text-2xl font-bold `}>
