@@ -57,11 +57,11 @@ export default function Footer() {
           <div className="flex flex-col">
             <p className="pb-2">
               <Link className="font-bold" href="/">
-                Plocket
+                Marketplace
               </Link>
             </p>
             <p>
-              <Link href="/">About Plocket</Link>
+              <Link href="/">About Marketplace</Link>
             </p>
             <p>
               <Link href="/">Press</Link>
