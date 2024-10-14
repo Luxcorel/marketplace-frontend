@@ -13,7 +13,7 @@ export default function Navbar() {
     <>
       <div className="grow pr-6 text-3xl font-black text-red-600 mobile-br:grow-0">
         <Link href="/" className="mobile-br:hidden">
-          Plocket
+          Marketplace
         </Link>
         <Link href="/" className="hidden mobile-br:block">
           P
