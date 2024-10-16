@@ -48,7 +48,7 @@
     "eslint-config-xo-react": "^0.27.0",
     "eslint-plugin-tailwindcss": "^3.14.3",
     "husky": "^9.0.11",
-    "lint-staged": "^15.2.2",
+    "lint-staged": "^15.2.10",
     "postcss": "^8",
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.5.11",
