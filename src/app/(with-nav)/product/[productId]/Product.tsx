@@ -43,13 +43,20 @@ export default async function Product(props: Props) {
 
   return product ? (
     <div className="w-full">
-      <div className="mb-2 flex space-x-2">
-        <Link className="text-sm hover:underline" href="/">
+      <div className="mb-2 flex items-center space-x-2">
+        <Link className="text-nowrap text-sm hover:underline" href="/">
           All categories
         </Link>
         <Image src="/images/arrow.svg" alt="arrow" width="8" height="8" />
-        <p className="text-sm text-gray-500 first-letter:uppercase">
+        <Link
+          className="text-sm first-letter:uppercase hover:underline"
+          href={`/?category=${product.productCategory.name}`}
+        >
           {product.productCategory.name}
+        </Link>
+        <Image src="/images/arrow.svg" alt="arrow" width="8" height="8" />
+        <p className="truncate text-sm text-gray-500 first-letter:uppercase">
+          {product.name}
         </p>
       </div>
 
