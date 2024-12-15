@@ -49,6 +49,7 @@ export default async function Product(props: Props) {
         </Link>
         <Image src="/images/arrow.svg" alt="arrow" width="8" height="8" />
         <Link
+          prefetch
           className="text-sm first-letter:uppercase hover:underline"
           href={`/?category=${product.productCategory.name}`}
         >
