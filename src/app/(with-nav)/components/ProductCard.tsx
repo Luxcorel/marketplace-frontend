@@ -95,6 +95,7 @@ export default function ProductCard(props: {
         </div>
 
         <Link
+          prefetch
           className="after:absolute after:inset-0 hover:underline"
           href={`/product/${product.productId}`}
         >
