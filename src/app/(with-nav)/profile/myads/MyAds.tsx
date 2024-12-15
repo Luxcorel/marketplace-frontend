@@ -80,7 +80,7 @@ export default function MyAds() {
               <h1>{product.productName}</h1>
               <Button
                 variant="destructive"
-                onClick={() => deleteProduct(product.id)}
+                onMouseDown={() => deleteProduct(product.id)}
               >
                 Delete
               </Button>
@@ -91,7 +91,7 @@ export default function MyAds() {
                 <div>
                   <Button
                     className="m-2 bg-green-500 hover:bg-green-600"
-                    onClick={() => {
+                    onMouseDown={() => {
                       setProductStatus(product.id, true);
                     }}
                   >
@@ -99,7 +99,7 @@ export default function MyAds() {
                   </Button>
                   <Button
                     className="m-2 bg-red-500 hover:bg-red-800"
-                    onClick={() => {
+                    onMouseDown={() => {
                       setProductStatus(product.id, false);
                     }}
                   >

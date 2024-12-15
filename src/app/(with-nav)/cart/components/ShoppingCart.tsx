@@ -61,7 +61,7 @@ export function ShoppingCart() {
                 </div>
                 <Button
                   className="z-10 mt-2 w-24 basis-0"
-                  onClick={() => removeFromCart(item.productId)}
+                  onMouseDown={() => removeFromCart(item.productId)}
                 >
                   Remove
                 </Button>

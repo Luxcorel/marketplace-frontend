@@ -104,7 +104,7 @@ export default function CreateProduct(props: Props) {
         const objectUrl = URL.createObjectURL(file);
         return (
           <div key={file.name} className="">
-            <button type="button" onClick={() => handleRemoveImage(index)}>
+            <button type="button" onMouseDown={() => handleRemoveImage(index)}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"

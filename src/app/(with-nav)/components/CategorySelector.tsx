@@ -30,7 +30,7 @@ export default function CategorySelector(props: {
           <button
             type="button"
             className="flex flex-col items-center hover:scale-105"
-            onClick={() => props.setProductCategoryName(category.name)}
+            onMouseDown={() => props.setProductCategoryName(category.name)}
           >
             <Image src={category.image} alt="" width={24} height={24} />
             <span>

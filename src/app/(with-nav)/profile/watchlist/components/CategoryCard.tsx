@@ -22,7 +22,7 @@ export default function CategoryCard(props: {
         <Link
           className="first-letter:uppercase hover:font-bold"
           href="/profile/watchlist"
-          onClick={() => {
+          onMouseDown={() => {
             props.handleCategoryUpdate(props.productInfo.productCategory);
           }}
         >

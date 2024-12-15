@@ -93,7 +93,7 @@ export default function Checkout() {
             </p>
             <Button
               className="self-center bg-amber-300 text-black hover:bg-amber-400"
-              onClick={handleOrderClick}
+              onMouseDown={handleOrderClick}
             >
               Submit order
             </Button>

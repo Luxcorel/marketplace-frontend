@@ -22,7 +22,7 @@ export default function Logout() {
 
   return (
     <div className="w-full">
-      <Button size="lg" variant="default" onClick={handleLogout}>
+      <Button size="lg" variant="default" onMouseDown={handleLogout}>
         Log out
       </Button>
     </div>

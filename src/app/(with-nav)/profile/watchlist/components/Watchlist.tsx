@@ -95,7 +95,7 @@ export default function MyWatchlist() {
               : "mt-4 flex rounded-t-lg p-4 hover:font-bold"
           }
           href="/profile/watchlist"
-          onClick={() => {
+          onMouseDown={() => {
             setSelected("-1");
           }}
         >
@@ -142,7 +142,7 @@ export default function MyWatchlist() {
                 </AlertDialogHeader>
                 <AlertDialogFooter>
                   <AlertDialogCancel>Cancel</AlertDialogCancel>
-                  <AlertDialogAction onClick={handleClickDeleteWatchlist}>
+                  <AlertDialogAction onMouseDown={handleClickDeleteWatchlist}>
                     Continue
                   </AlertDialogAction>
                 </AlertDialogFooter>

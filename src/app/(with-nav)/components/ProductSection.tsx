@@ -331,7 +331,7 @@ export default function ProductSection(props: {
               : "hidden"
           }
         >
-          <Button variant="ghost" className="p-1" onClick={handleReset}>
+          <Button variant="ghost" className="p-1" onMouseDown={handleReset}>
             <Image
               src="/images/trash.svg"
               alt="Clear filters"
@@ -351,7 +351,7 @@ export default function ProductSection(props: {
                 variant="outline"
                 className="border-black"
                 type="button"
-                onClick={handleClickUnsubscribe}
+                onMouseDown={handleClickUnsubscribe}
               >
                 <div className="mr-2">
                   <svg
@@ -375,7 +375,7 @@ export default function ProductSection(props: {
                 variant="outline"
                 className="border-black"
                 type="button"
-                onClick={handleClickSubscribe}
+                onMouseDown={handleClickSubscribe}
               >
                 <div className="mr-2">
                   <svg
