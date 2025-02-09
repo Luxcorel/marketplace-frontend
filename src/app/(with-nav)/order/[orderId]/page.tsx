@@ -1,15 +1,14 @@
 "use client";
 
 import { getBuyOrderById } from "@/utils/api-calls";
-import { useEffect, useState } from "react";
+import { useEffect, useState, use } from "react";
 import { OrderGetResponseDTO } from "@/types/endpoint-types-incoming";
 import ProductCardSlim from "@/app/(with-nav)/order/components/ProductCardSlim";
 
-export default function Page({
-  params,
-}: {
-  readonly params: { orderId: string };
+export default function Page(props: {
+  readonly params: Promise<{ orderId: string }>;
 }) {
+  const params = use(props.params);
   const [product, setProduct] = useState<OrderGetResponseDTO>();
 
   useEffect(() => {

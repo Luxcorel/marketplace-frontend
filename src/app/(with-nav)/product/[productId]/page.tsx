@@ -6,7 +6,7 @@ import { ProductGetResponseDTO } from "@/types/endpoint-types-incoming";
 import { getProductById } from "@/utils/api-calls";
 
 type Props = {
-  readonly params: { productId: string };
+  readonly params: Promise<{ productId: string }>;
 };
 
 async function getProduct(
@@ -25,7 +25,8 @@ async function getProduct(
   return undefined;
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata(props: Props): Promise<Metadata> {
+  const params = await props.params;
   const product = await getProduct(params.productId);
 
   return {
@@ -37,7 +38,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default async function Page({ params }: Props) {
+export default async function Page(props: Props) {
+  const params = await props.params;
   return (
     <div className="mx-auto my-3 w-11/12 2md:w-8/12">
       <Suspense fallback={<ProductSkeleton />}>

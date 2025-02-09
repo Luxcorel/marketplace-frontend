@@ -32,7 +32,9 @@ export default function ConditionSelector(props: {
         .filter((value) => typeof value === "number")
         .map((condition) => (
           <option key={condition} value={condition}>
-            {ProductCondition[condition as keyof typeof ProductCondition]
+            {ProductCondition[
+              condition as unknown as keyof typeof ProductCondition
+            ]
               .toString()
               .replace(/_/g, " ")
               .toLowerCase()
