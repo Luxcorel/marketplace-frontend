@@ -1,7 +1,6 @@
 {
   "extends": [
     "xo",
-    "xo-react",
     "plugin:tailwindcss/recommended",
     "next/core-web-vitals",
     "prettier"

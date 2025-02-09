@@ -39,7 +39,6 @@ const buttonVariants = cva(
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
-  // eslint-disable-next-line react/require-default-props
   readonly asChild?: boolean;
 }
 
