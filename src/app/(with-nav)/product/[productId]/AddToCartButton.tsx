@@ -2,9 +2,13 @@
 
 import { Button } from "@/components/ui/button";
 import { useCart } from "@/components/CartContext";
-import { useProfile } from "@/utils/api-calls-swr";
-import { ProductGetResponseDTO } from "@/types/endpoint-types-incoming";
+import {
+  ProductGetResponseDTO,
+  ProfileResponseDTO,
+} from "@/types/endpoint-types-incoming";
 import { useAuth } from "@/components/AuthContext";
+import { useEffect, useState } from "react";
+import { getProfile } from "@/utils/api-calls";
 
 type Props = {
   readonly product: ProductGetResponseDTO;
@@ -15,7 +19,18 @@ export default function AddToCartButton(props: Props) {
   const { addToCart, removeFromCart, items } = useCart();
   const { loggedIn } = useAuth();
 
-  const { data: seller } = useProfile(product.seller);
+  const [seller, setSeller] = useState<ProfileResponseDTO | undefined>();
+
+  useEffect(() => {
+    const fetchSeller = async () => {
+      const seller = await getProfile(product.seller)
+        .then((res) => res.json())
+        .catch((err) => console.log(err));
+      setSeller(seller);
+    };
+
+    fetchSeller();
+  }, [product.seller]);
 
   const handleAddToCart = () => {
     if (product) {
