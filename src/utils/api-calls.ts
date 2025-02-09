@@ -10,6 +10,21 @@ const BACKEND_HOST =
 const BACKEND_API_VERSION = process.env.NEXT_PUBLIC_BACKEND_API_VERSION || "v1";
 const BACKEND_URL = `${BACKEND_HOST}/${BACKEND_API_VERSION}`;
 
+function getCookie(name: string): string | null {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+
+  if (parts.length === 2) {
+    return parts.pop()?.split(";").shift() || null;
+  }
+
+  return null;
+}
+
+function getCsrfToken() {
+  return getCookie("XSRF-TOKEN") || "";
+}
+
 /*
      \      _ \ _ _|                       |               _)         |
     _ \    |   |  |        _ \  __ \    _` |  __ \    _ \   |  __ \   __|   __|
@@ -26,6 +41,7 @@ export function login(username: string, password: string) {
     method: "POST",
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",
+      "X-XSRF-TOKEN": getCsrfToken(),
     },
     credentials: "include",
     body: `username=${username}&password=${password}`,
@@ -38,6 +54,9 @@ export function logout() {
 
   return fetch(url, {
     method: "POST",
+    headers: {
+      "X-XSRF-TOKEN": getCsrfToken(),
+    },
     credentials: "include",
   });
 }
@@ -48,6 +67,9 @@ export function deleteAccount() {
 
   return fetch(url, {
     method: "DELETE",
+    headers: {
+      "X-XSRF-TOKEN": getCsrfToken(),
+    },
     credentials: "include",
   });
 }
@@ -71,6 +93,7 @@ export function passwordUpdate(oldPassword: string, newPassword: string) {
     credentials: "include",
     headers: {
       "Content-Type": "application/json",
+      "X-XSRF-TOKEN": getCsrfToken(),
     },
     body: JSON.stringify({
       oldPassword,
@@ -95,6 +118,7 @@ export function register(
     method: "POST",
     headers: {
       "Content-Type": "application/json",
+      "X-XSRF-TOKEN": getCsrfToken(),
     },
     credentials: "omit",
     body: JSON.stringify({
@@ -238,6 +262,9 @@ export function postProduct(
 
   return fetch(url, {
     method: "POST",
+    headers: {
+      "X-XSRF-TOKEN": getCsrfToken(),
+    },
     credentials: "include",
     body: formData,
   });
@@ -289,6 +316,9 @@ export function deleteProductById(productId: string) {
 
   return fetch(url, {
     method: "DELETE",
+    headers: {
+      "X-XSRF-TOKEN": getCsrfToken(),
+    },
     credentials: "include",
   });
 }
@@ -329,6 +359,9 @@ export function deleteInboxMessageById(messageId: string) {
 
   return fetch(url, {
     method: "DELETE",
+    headers: {
+      "X-XSRF-TOKEN": getCsrfToken(),
+    },
     credentials: "include",
   });
 }
@@ -352,6 +385,7 @@ export function addEntryToWatchlist(productCategoryName: string) {
     credentials: "include",
     headers: {
       "Content-Type": "application/json",
+      "X-XSRF-TOKEN": getCsrfToken(),
     },
     body: productCategoryName,
   });
@@ -363,6 +397,9 @@ export function deleteWatchlistEntryById(watchlistItemId: string) {
 
   return fetch(url, {
     method: "DELETE",
+    headers: {
+      "X-XSRF-TOKEN": getCsrfToken(),
+    },
     credentials: "include",
   });
 }
@@ -396,6 +433,7 @@ export function placeOrder(productsIds: ProductBuyOrder[]) {
     credentials: "include",
     headers: {
       "Content-Type": "application/json",
+      "X-XSRF-TOKEN": getCsrfToken(),
     },
     body: JSON.stringify({
       orderItemDTOS: productsIds,
@@ -422,6 +460,7 @@ export function handleBuyOrderRequest(productId: string, accept: boolean) {
     credentials: "include",
     headers: {
       "Content-Type": "application/json",
+      "X-XSRF-TOKEN": getCsrfToken(),
     },
     body: JSON.stringify({
       accept,
