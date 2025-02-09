@@ -2,8 +2,8 @@ import Link from "next/link";
 
 export default function HeroImage() {
   return (
-    <div className="animate-slideIn bg-[url('/images/cat.jpg')] bg-cover pt-2 text-white">
-      <h1 className="m-10 text-4xl font-black text-red-600">Plocket</h1>
+    <div className="animate-slideIn bg-[url('/images/cat.webp')] bg-cover pt-2 text-white">
+      <h1 className="m-10 text-4xl font-black text-red-600">Marketplace</h1>
       <h1 className="ml-10 w-2/3 text-5xl font-bold">
         Login for the best experience
       </h1>
