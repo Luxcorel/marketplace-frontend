@@ -3,6 +3,8 @@ import { get20LatestProducts } from "@/utils/api-calls";
 import { ProductGetAllResponseDTO } from "@/types/endpoint-types-incoming";
 import React, { Suspense } from "react";
 
+export const revalidate = 0;
+
 async function getProducts(): Promise<ProductGetAllResponseDTO | undefined> {
   const product: ProductGetAllResponseDTO = await get20LatestProducts()
     .then((res) => res.json())
