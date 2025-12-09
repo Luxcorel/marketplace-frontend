@@ -72,7 +72,6 @@ const addToRemoveQueue = (toastId: string) => {
 };
 
 export const reducer = (state: State, action: Action): State => {
-  // eslint-disable-next-line default-case
   switch (action.type) {
     case "ADD_TOAST":
       return {
@@ -129,7 +128,6 @@ export const reducer = (state: State, action: Action): State => {
   }
 };
 
-// eslint-disable-next-line no-unused-vars
 const listeners: Array<(state: State) => void> = [];
 
 let memoryState: State = { toasts: [] };

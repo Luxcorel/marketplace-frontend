@@ -103,7 +103,7 @@ export function passwordUpdate(oldPassword: string, newPassword: string) {
 }
 
 // POST /accounts/register
-// eslint-disable-next-line max-params
+
 export function register(
   firstName: string,
   lastName: string,
@@ -168,7 +168,7 @@ export function get20LatestProducts() {
  * @param sortMode product sort mode enum
  * @param query product name search query
  */
-// eslint-disable-next-line max-params
+
 export function getProducts(
   productCategoryName: string | null,
   minimumPrice: number | null,
@@ -219,7 +219,7 @@ export function getProducts(
 }
 
 // POST /products
-// eslint-disable-next-line max-params
+
 export function postProduct(
   name: string,
   productCategoryId: string,

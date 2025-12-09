@@ -32,9 +32,9 @@ export interface CartProductDTO {
 
 interface CartContextType {
   items: CartProductDTO[];
-  // eslint-disable-next-line no-unused-vars
+
   addToCart: (item: CartProductDTO) => void;
-  // eslint-disable-next-line no-unused-vars
+
   removeFromCart: (productId: string) => void;
   nukeCart: () => void;
 }
@@ -48,6 +48,7 @@ export function CartProvider({ children }: { readonly children: ReactNode }) {
     const storedCart = localStorage.getItem("cart");
     if (storedCart) {
       const jsonCart: CartProductDTO[] = JSON.parse(storedCart);
+      // eslint-disable-next-line
       setItems(jsonCart);
     }
   }, []);

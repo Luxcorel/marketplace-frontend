@@ -62,7 +62,6 @@ export function mutate20LatestProducts() {
   mutateProducts(null, null, null, null, null);
 }
 
-// eslint-disable-next-line max-params
 export function useProducts(
   productCategoryName: string | null,
   minimumPrice: number | null,
@@ -108,7 +107,6 @@ export function useProducts(
   return useSWR<ProductGetAllResponseDTO>(url, fetcher);
 }
 
-// eslint-disable-next-line max-params
 export function mutateProducts(
   productCategoryName: string | null,
   minimumPrice: number | null,

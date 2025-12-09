@@ -32,7 +32,6 @@ interface SearchParams {
   query: string | undefined;
 }
 
-// eslint-disable-next-line complexity
 export default function ProductSection(props: {
   readonly fallbackData: ProductGetAllResponseDTO | undefined;
 }) {
